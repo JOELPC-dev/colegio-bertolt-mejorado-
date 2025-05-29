@@ -1,0 +1,89 @@
+/* Estilo general */
+body {
+    font-family: 'outfit';
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;  /* Asegura que el body ocupe todo el alto de la pantalla */
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    font-family: 'outfit';
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 50px;
+}
+.event-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.event-header h1 {
+    font-size: 2.5rem;
+    color: #5a2a2a;
+}
+.share-links {
+    margin: 10px 0;
+    text-align: center;
+}
+.share-links a {
+    margin: 0 5px;
+    text-decoration: none;
+}
+.event-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #b0b0b0;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.back-link:hover {
+    background-color: #8e8e8e;
+    text-decoration: none;
+}
+.back-link:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    margin-top: 5px;
+    transition: width 0.3s ease;
+}
+.back-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+/* Estilo para el botón Whole school events */
+.school-events-btn {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    background-color: #d0ebff; /* Azul claro */
+    color: #0056b3; /* Azul oscuro */
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.school-events-btn:hover {
+    background-color: #bee1ff; /* Azul más claro */
+    color: #004085;
+}

@@ -1,0 +1,13 @@
+body {
+    background-image:url(../IMGS/infraestructura.jpg);
+    background-size: cover ;
+    background-position: center ;
+    background-repeat: no-repeat ;
+}
+@media (min-width: 2560px){
+    body  {
+        width: 75% ;            
+        justify-self: center;
+        right: 50px  ;
+    }
+}

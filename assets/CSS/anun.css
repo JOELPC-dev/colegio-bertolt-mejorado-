@@ -1,0 +1,64 @@
+
+#modal-ad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 8000;
+    padding: 20px; /* Espacio para evitar que el contenido quede pegado a los bordes */
+    box-sizing: border-box;
+}
+
+#ad-content {       
+    width: 550px ;
+    max-width: 800px; /* Reduce el máximo para pantallas más pequeñas */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border: 2px solid #000;    
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#ad-content img {
+    width: 100%; /* Imagen completamente responsiva */
+    height: 90vh; /* Mantener proporción */
+    border-radius: 10px;
+}
+
+/* Pantallas pequeñas y tablets */
+@media (max-width: 768px) {
+    #ad-content {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+/* Laptops pequeñas y pantallas medianas */
+@media (min-width: 769px) and (max-width: 1366px) {
+    #ad-content {
+        max-width: 50%;
+    }
+}
+#ad-content, #close-ad {
+    position: absolute;
+    top: 25px;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    z-index: 5000;
+}
+#close-ad{
+right: 0;
+top: 5px ;
+}
+
+#close-ad:hover {
+    color: red;
+}

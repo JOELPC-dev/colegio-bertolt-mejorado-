@@ -1,0 +1,184 @@
+*{
+    font-family: 'Outfit';
+}
+/* Estilos del contenedor principal */
+.contenedor-principal {
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 40px auto;
+    width: 100%;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.content-primary-start{
+    width: 100%;
+}
+
+.content-primary-start img{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+/* Cuadro en la esquina */
+.label-niveles {
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    background-color: #0027d6;
+    color: white;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/* Contenedor de niveles */
+.niveles-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+/* Cada tarjeta de nivel */
+.nivel {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.nivel:hover {
+    transform: scale(1.05);
+}
+.nivel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: filter 0.3s;
+}
+.nivel:hover img {
+    filter: brightness(0.5);
+}
+
+/* Título del nivel */
+.nivel h2 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+/* Estilo para el texto dentro de la tarjeta */
+.nivel-text {
+    font-family: 'Outfit', sans-serif;
+    color: white; /* Texto blanco */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    text-align: center;
+    visibility: hidden; /* El texto está oculto por defecto */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    padding: 10px;
+    border-radius: 5px;
+    white-space: normal; /* Para permitir que el texto pase a varias líneas */
+    line-height: 1.5;
+    opacity: 0; /* Inicialmente el texto no es visible */
+}
+
+/* Animación para mostrar las letras desde el costado derecho */
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%) scale(0.8); /* Comienza desde el costado derecho */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1); /* Termina en su posición original */
+        opacity: 1;
+    }
+}
+
+/* Cuando pasas el cursor sobre la tarjeta, el texto se hace visible y se anima */
+.nivel:hover .nivel-text {
+    visibility: visible;
+    opacity: 1;
+    animation: slideFromRight 0.6s ease-out forwards; /* Aparece desde el lado derecho */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .niveles-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nivel {
+        width: 90%;
+        height: auto;
+    }
+    .nivel img {
+        height: auto;
+    }
+}
+/* Estilo básico del botón */
+.btn-goo {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    font-family: 'Outfit', sans-serif; /* Tipografía */
+    font-size: 16px; /* Tamaño de la fuente */
+    padding: 10px 10px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor cuando pasa por encima */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    width: 135px ;
+    text-decoration: none;
+}
+.btn-goo a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.btn-goo:hover {
+    background-color: #45a049; /* Cambio de color en hover */
+    transform: scale(1.1); /* Agrandar el botón al pasar el ratón */
+}
+
+/* Efecto cuando el botón es presionado */
+.btn-goo:active {
+    transform: scale(1); /* Vuelve a su tamaño original */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) { 
+    .btn-goo {
+        font-size: 14px; /* Ajusta el tamaño de la fuente en pantallas más pequeñas */
+        padding: 8px 16px; /* Ajusta el espaciado en pantallas más pequeñas */
+    }
+}
+.card-icon{
+    color: #fff;
+    font-size: 200px;
+    padding: 0 50px ;
+}
+.card-icons{
+    display: block;
+    color: #fff;
+    font-size: 10px;
+    padding: 0 50px ;
+}

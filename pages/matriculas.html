@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrículas - bertol brecht</title>
+    <link rel="stylesheet" href="../assets/CSS/navbar.css">
+    <link rel="stylesheet" href="../assets/CSS/matriculas.css">
+    <link rel="icon" href="../assets/IMGS/icon/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">  
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <h2 class="head-location">
+            <div class="links">
+                <div class="links-right">
+                    <a href="https://maps.app.goo.gl/Qt6A7sD3pSrREDx58">Jr. Lima N°645, Huancayo</a>
+                    <a href="https://maps.app.goo.gl/7ZGbNuvcjkD1Mdsn6">Calle Real N°859, Chilca</a>
+                    <a href="#" id="linkWhatsappButton"><i class="bi bi-whatsapp"></i> 956 900 742</a>
+                    <a href="tel:+064212189"><i class="bi bi-telephone"></i> (064)212189</a>
+                    <script src="../assets/JS/wssp-link.js"></script>
+                </div>
+                <div class="links-left">
+                    <a href="https://www.facebook.com/p/Colegio-Bertolt-Brecht-Huancayo-100063808637179/"><i class="bi bi-facebook"></i> Colegio Bertolt Brecht</a>
+                    <a href="mailto:bertoltbrecht2020@gmail.com?subject=Consulta%20de%20información&body=Hola,%20me%20gustaría%20obtener%20información%20sobre..."><i class="bi bi-envelope-at"></i> bertoltbrecht2020@gmail.com</a>
+                </div>
+            </div>
+        </h2>
+            <nav>
+            <div class="logo-menu-container">
+                <div class="logo" >
+                    <div class="menu-item">                       
+                            <span>BERTOLT</span>
+                            <a href="../index.html"><img src="../assets/IMGS/logo_bert.png" alt="Logo"></a>
+                            <span>BRECHT</span>                                 
+                    </div>
+                </div>
+                <button class="hamburger-menu" aria-label="Abrir menú">☰</button>
+            </div>
+
+            <div class="links-container">
+                <div class="menu-item">
+                    <a href="../pages/quienes-somos.html" id="disabled">¿QUIÉNES SOMOS?</a>
+                    <div class="submenu">
+                        <a href="../pages/solese.html">Filosofía Solese</a>
+                        <a href="../pages/historia.html">Nuestra Historia</a>
+                        <a href="../pages/conocenos.html">Misión, Visión y Valores </a>
+                        <a href="../pages/aniversario.html">Aniversario</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <a href="../pages/niveles-main.html">NIVELES</a>
+                    <div class="submenu">
+                        <a href="../pages/inicial.html">Inicial</a>
+                        <a href="../pages/primaria.html">Primaria</a>
+                        <a href="../pages/secundaria.html">Secundaria</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <a href="../pages/gestion.html">GESTIÓN</a>
+                    <div class="submenu">
+                        <a href="../pages/reglamento.html">Reglamento interno 2025</a>                            
+                        <a href="../pages/estructura.html">Infraestructura, equipamientos </a>
+                    </div>
+                </div>
+                <div class="logo2">
+                    <div class="menu-item">    
+                        <p>BERTOLT</p>                    
+                        <a class="redirect" href="../index.html"><img src="../assets/IMGS/logo_bert.png" alt="Logo"></a>
+                        <p>BRECHT</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <a href="../pages/matriculas.html">MATRÍCULA 2025</a>
+                </div>
+                <div class="menu-item">
+                    <a href="../pages/consejeria.html">VIDA ESCOLAR</a>
+                    <div class="submenu">
+                        <a href="../pages/talleres.html">Talleres</a>
+                        <a href="../pages/depar-Psicología.html">Departamento de Psicología</a>
+                        <a href="../pages/noticias-novedades.html">Notícias y Novedades</a>
+                        <a href="../pages/calendario.html">Cronograma cívico</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <a href="../pages/contactenos.html">CONTÁCTENOS</a>                    
+                </div>
+            </div>
+        </nav>
+        <script src="../assets/JS/navbar.js"></script>
+    </header>
+    <script src="../assets/JS/scroll_nav.js"></script>
+    
+    <!-- banner dinamico -->
+    <div class="banner">
+        <div class="cinta">            
+            <span class="content-cinta">Matriculas Abiertas 2025</span>
+            <span class="content-cont-cinta">Matriculas Abiertas 2025</span>
+            <span class="content-cont-cinta">Matriculas Abiertas 2025</span>
+            <span class="content-cont-cinta">Matriculas Abiertas 2025</span>
+        </div>
+    </div>    
+    
+    <br>
+    <!--  -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">✖</button>
+            <section id="registration-form">
+                <h2>Formulario de Matrícula</h2>
+                <form action="submit_form.php" method="POST" enctype="multipart/form-data" id="form">
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="document">Subir Documentos del paso 3:</label>
+                    <input type="file" id="document" name="document" required>
+    
+                    <label for="comments">Comentarios:</label>
+                    <textarea id="comments" name="comments"></textarea>
+    
+                    <button type="submit">ENVIAR</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <div class="instruccions-container">
+                <h1>Instrucciones:</h1>
+                <ol>
+                    <li>
+                        Abrir el enlace de <a href="https://drive.google.com/file/d/1Fl9y0tl3M5bOcao349d1OSjjFHbMbdoA/view?usp=drive_link" class="highlight">Propuesta Educativa 2025</a> para lectura y conocimiento.
+                        <a href="https://drive.google.com/file/d/1Fl9y0tl3M5bOcao349d1OSjjFHbMbdoA/view?usp=drive_link"><button class="button"> <i class="bi bi-download"></i> VER PROPUESTA EDUCATIVA</button></a>
+                    </li> <br> <br>
+                    <li>
+                        Abrir el enlace de <a href="https://drive.google.com/file/d/10A0vqwjT2VdLMa04KSMfHr33AQqVafV1/view?usp=drive_link" class="highlight">Reglamento Interno 2025</a> para lectura y conocimiento.
+                        <a href="https://drive.google.com/file/d/10A0vqwjT2VdLMa04KSMfHr33AQqVafV1/view?usp=drive_link"><button class="button"> <i class="bi bi-download"></i> REGLAMENTO INTERNO 2024</button></a>
+                    </li> <br> <br>
+                    <li>
+                        Descargue y rellene los siguientes documentos y cargelos al formulario:
+                        <ul>
+                            <li><a href="https://drive.google.com/file/d/1L3Eq5F6Fc8iVgII0Wi1pb9Vo2VdH-bXA/view?usp=drive_link" class="doc-link">Contrato de prestación de servicios 2024</a></li>
+                            <li><a href="https://drive.google.com/file/d/1TASOqkRcDR6OvP6s9WkLtN9m8hg2ZgDJ/view?usp=drive_link" class="doc-link">Ficha de datos del alumno</a></li>
+                            <!-- <li><a href="#" class="doc-link">Cargo de recepción de propuesta educativa</a></li>
+                            <li><a href="#" class="doc-link">Cargo de recepción del Reglamento interno</a></li> -->
+                        </ul>
+                    </li> <br> <br>
+                    <li>
+                        Completa el formulario de Matrícula (estará activo a partir del 10 de
+                        enero).
+                        <button class=" button open-modal-btn"> <i class="bi bi-info-circle"></i> FORMULARIO DE MATRÍCULA</button>
+                    </li>
+                    <script src="../assets/JS/modal-form-matriculas.js"></script>
+                </ol>
+                <p class="note">
+                    Nota: Los pagos por matrícula se realizarán en Scotiabank con los apellidos y nombres del alumno o DNI, no se
+                    aceptarán depósitos a la cuenta corriente del Colegio.
+                </p>
+        </div>
+    </div>
+    <script src="../assets/JS/matriculas.js"></script>
+    <!-- script-bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- popper-bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!--  -->
+    <footer class="container-copyright">
+        <p>&copy; 2024 Colegio Bertolt Brecht. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

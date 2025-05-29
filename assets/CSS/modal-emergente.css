@@ -1,0 +1,142 @@
+body {
+    font-family: 'outfit';
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;  /* Asegura que el body ocupe todo el alto de la pantalla */
+    display: flex;
+    flex-direction: column;
+}
+.card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+.card button:hover {
+    background-color: #0056b3;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #fff;
+    width: 80%;
+    height: 80%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #1713ff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.close:hover {
+    background: #3350f7;
+}
+/*  */
+/*  */
+/*  */
+
+/* Images and Tips */
+.container-imagenes-y-tips {
+    gap: 20px;
+    padding: 20px 20px;       
+    background: linear-gradient(to right, white, rgb(182, 182, 192), white);
+    margin-bottom: 20px ;
+}
+
+.content-info-ima-tips {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 20px 0 ;
+}
+
+.container-imagenes-y-tips h2 {
+    text-align: center;
+    color: #000;
+    font-size:1.9rem;
+    font-weight: bold;
+}
+.custom-img {
+    width: 100%; /* Ajusta la imagen al ancho completo del contenedor */
+    height: 500px; /* Define una altura específica */
+    object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor sin distorsionarse */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container-imagenes-y-tips{        
+        flex-wrap: wrap;
+    }
+    .container-imagenes-y-tips h2{
+        width: 100%;
+        padding: 0px;
+    }
+    .custom-img {
+        width: 80%; /* Ajusta el tamaño al 80% del contenedor en pantallas más pequeñas */
+        height: 200px; /* Ajusta la altura en pantallas más pequeñas */
+    }
+}
+/* Estilos para el botón */
+.btn-tips {
+    background-color: #007bff; 
+    color: white;              
+    border: none;              
+    padding: 10px 20px;        
+    font-size: 16px;           
+    cursor: pointer;          
+    border-radius: 5px;        
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;    
+    display: inline-block;   
+    text-align: center;    
+}
+
+.btn-tips:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05);   
+}
+
+/* Estilos para el enlace dentro del botón */
+.btn-tips a {
+    color: white;           
+    text-decoration: none;  
+}
+/* modal */
+.modal-body iframe {
+    width: 100%;
+}
+@media (min-width: 768) {
+    .modal-dialog {
+        max-width: 90%;
+        margin: auto;
+    }
+    
+    .modal-body iframe {
+        height: 400px; /* Ajusta la altura para pantallas pequeñas */
+    }
+}

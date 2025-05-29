@@ -1,0 +1,108 @@
+body {
+    font-family: 'outfit';
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;  /* Asegura que el body ocupe todo el alto de la pantalla */
+    display: flex;
+    flex-direction: column;
+}
+
+.container-title {
+    text-align: center;
+    font-family: 'outfit';
+    margin-top: 50px;
+}
+
+/* Diseño inicial para pantallas grandes (sin cambios) */
+.containerFlip-view {
+    max-width: 1200px;
+    display: grid;
+    place-self: center;
+}
+
+.container-title h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.iframe-container {
+    width: 1200px; /* Ancho fijo para pantallas grandes */
+    height: 725px; /* Altura fija para pantallas grandes */
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.note-credits {
+    display: none;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* Media Query para pantallas medianas (tablets y pequeñas) */
+@media (max-width: 1200px) {
+    .iframe-container {
+        width: 100%; /* Se ajusta al ancho del contenedor */
+        padding-top: 56.25%; /* Relación de aspecto 16:9 */
+        height: auto; /* Altura automática */
+        position: relative;
+    }
+
+    .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .container-title h1 {
+        font-size: 1.5rem; /* Texto más pequeño */
+    }
+
+    .note-credits {
+        font-size: 0.7rem;
+    }
+    .iframe-container {
+        width: auto; /* Se ajusta al ancho del contenedor */
+        padding-top:  75%; /* Relación de aspecto 16:9 */
+        height: auto; /* Altura automática */
+        position: relative;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-title h1 {
+        font-size: 1.2rem; /* Más pequeño para móviles */
+    }
+
+    .note-credits {
+        font-size: 0.6rem;
+    }
+}
+.action-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.action-buttons .btn {
+    margin: 5px;
+    font-size: 1rem;
+}
+
+/* Asegúrate de que los botones se adapten bien en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .action-buttons .btn {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}

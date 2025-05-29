@@ -1,0 +1,176 @@
+body {
+    font-family: 'outfit';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    font-family: 'outfit';
+    max-width: 40%;
+    margin: auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+@media (max-width: 768px) {
+
+    .contact-container{
+    max-width: 80%;
+    margin: auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 60px ;
+    }
+    .contact-form input,
+    .contact-form textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    }
+    #map-u{
+        outline: 1px solid #000;
+        margin: 5px auto;
+        border-radius: 5px;
+    }
+    #map-u iframe{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Estilos del encabezado del formulario */
+.contact-container h2 {
+    font-family: 'outfit', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Estilos del formulario */
+.contact-form {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos de los campos del formulario */
+.contact-form label {
+    font-family: 'outfit', sans-serif;    
+    font-weight: 700;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    margin: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: 'outfit', sans-serif;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Estilos del botón de envío */
+.contact-form .btn {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px;
+}
+.contact-form .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de la información de contacto */
+.contact-info {
+    margin-top: 2rem;
+}
+
+.contact-info h3 {
+    font-family: 'outfit';
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* ubicacion con mapa */
+#map-u{
+    font-family: 'outfit';    
+    outline: 1px solid #000;
+    margin: 5px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 3px;
+}
+#map-u iframe{
+    width: 100%;
+    height: 100%;
+}
+/* conocenos info y video */
+.location-container{
+    background-color: rgba(128, 128, 128, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-family: 'outfit';
+    gap: 20px;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.contact-info, .map-container{
+    padding: 20px; /* Espaciado interno */
+    margin: 5px; /* Espaciado entre divs */
+}
+.map-container{
+    width: 50%;
+}
+.location-container .map-container h3{
+    text-align: center;
+    color: #fff;
+}
+/* Estilos de la respuesta del formulario */
+.response-message {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #007BFF;
+    text-align: center;
+}
+
+.location-container a {
+    text-decoration: none;
+    color: #fff;
+    gap: 5px;
+}
+.location-container a:hover {
+    text-decoration: underline;
+    color: #050505;
+    font-size: 17px;
+}

@@ -1,0 +1,131 @@
+body{
+    margin-top: 90px;
+}
+@media (min-width: 2560px){
+    body  {
+        width: 75% ;            
+        justify-self: center ;
+        right: 50px  ;
+    }       
+    .carousel-item img{
+        height: 70em;
+    }
+    body .header-container.scrolled{
+        width: 75% ;
+    }
+}
+/* link no redireccionales */
+a.disabled{
+    pointer-events: none;
+    color: gray;
+    text-decoration: none;
+}
+/* Navbar cuando está en su estado inicial (no se ha hecho scroll) */
+.navbar {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #005ab4;
+    position: relative; /* Relativo cuando no se hace scroll */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+    top: -10px ; /* Asegúrate de que no haya un 'top' negativo aquí */
+}
+
+/* Navbar cuando se ha hecho scroll */
+header.scrolled {
+    position: fixed; /* Fijado en la parte superior al hacer scroll */
+    top: -0px ; /* Asegura que esté pegado a la parte superior */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    z-index: 1000; /* Para que esté por encima del contenido */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #2b7bd1;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00478f;
+    z-index: 2; /* Asegura que el dropdown esté por encima del navbar */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    width: 150px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    left: 30px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 245px; /* Ancho del menú más pequeño */
+        position: absolute; /* Posiciona el menú de forma absoluta */
+        top: 50px; /* Ajusta según la altura del navbar */
+        right: 0; /* Alínea el menú a la derecha del navbar */
+        background-color:  #0162c4; /* Fondo para el menú */
+        z-index: 2; /* Asegura que esté por encima */
+        border-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .hamburger {
+        display: block; /* Muestra el icono de hamburguesa */
+    }
+    .logo img{
+        width: 130px ;       
+    }
+}
+.navbar .logo img{
+    max-width: 200px  ;
+    position: absolute;
+    top: -10px;
+}
+.head-location{
+    background-color: #fff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: medium;
+    text-align: center;
+    padding: 5px ;
+}
+.container-copyright {
+    background-color: #004386;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}

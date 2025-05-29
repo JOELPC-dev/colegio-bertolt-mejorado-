@@ -1,0 +1,240 @@
+body {
+    font-family: 'outfit';
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;  /* Asegura que el body ocupe todo el alto de la pantalla */
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    font-family: 'outfit';
+    width: 100%; 
+    height: 80px;
+    overflow: hidden; 
+    background-color: #d2ecf8; 
+    position: relative;
+    box-shadow: 0px 0px 10px 10px #d2ecf8;
+    top: 30px;
+    display: grid;
+    place-self: center  ;
+}
+
+/* Contenedor de la cinta */
+.cinta {
+    display: flex; /* Alineación horizontal de los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    white-space: nowrap; /* Evita que el contenido haga salto de línea */
+    animation: moverCinta 25s linear  infinite  ; /* Animación de desplazamiento */
+}
+
+/* Elementos individuales de la cinta */
+.content-cinta,
+.content-cont-cinta {
+    font-size: 24px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color del texto */
+    margin-right: 50px; /* Espacio entre los textos */
+}
+
+/* Animación de movimiento */
+@keyframes aparecer{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes moverCinta {
+    0% {
+        transform: translateX(110%); /* Comienza fuera del contenedor por la derecha */
+    }
+    100% {
+        transform: translateX(-120%); /* Se desplaza fuera del contenedor por la izquierda */
+    }
+}
+
+
+/*  */
+/*  */
+/* Estilos generales */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.open-modal-btn {
+    padding: 10px 20px;
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.open-modal-btn:hover {
+    background-color: #350064;
+}
+
+/* Modal */
+.modal {
+    font-family: 'outfit';
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px ;
+    border-radius: 10px;
+    max-width: 50%;
+    position: relative;
+}
+.modal .modal-content h2{
+    text-align: center;
+    font-weight: 600;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #006adb;
+}
+@media (max-width: 768px){
+    .modal-content{
+        max-width: 90%;
+    }
+    form button{
+        width: 100px;
+    }
+}
+/* 2 */
+.instructions { 
+    font-family: 'outfit';
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px  #000;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px ;
+    padding: 10px ;
+}
+
+
+h1  {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-top: 10px;
+    padding-left: 40px;
+}
+
+a.highlight {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.highlight:hover {
+    text-decoration: underline;
+}
+
+a.doc-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a.doc-link:hover {
+    text-decoration: underline;
+}
+
+.button {
+    margin-top: 0px;
+    padding: 8px 12px;
+    color: #fff;
+    background-color: #300d9c;
+    border: none;
+    border-radius: 20px 20px 20px 20px ;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    float: right;
+    width: 240px ;
+    /* Alinea el botón al extremo derecho */
+}   
+
+
+.button:hover {
+    background-color: #fa3939;
+    font-size: 16px;
+    width: 270px;
+}
+
+.note {
+    margin: 20px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #555;
+}

@@ -1,0 +1,353 @@
+
+/* responsividad para las pantallas más grandes */
+
+@media (min-width: 2560px){
+    body  {
+        width: 75% ;            
+        justify-self: center ;
+        right: 50px  ;
+    }       
+    .carousel-item img{
+        height: 70em;
+    }
+    body header.scrolled{
+        width: 75% ;
+    }
+}
+/* Navbar cuando se ha hecho scroll */
+header.scrolled {
+    position: fixed; 
+    top: -0px ;
+    width: 100%; 
+    z-index: 3;
+}
+
+/* Barra de navegación */
+header nav {
+    font-family: 'outfit';
+    width: 100% ;
+    height: fit-content;
+    position: relative;
+    top: -8px;
+    z-index: 1;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #0000A3;
+    text-align: center;
+}
+
+/* Contenedor del logo y menú hamburguesa */
+.logo-menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.logo-container{    
+    display: inline;
+    list-style: none;   
+    background-color: #ecf0f1;
+}
+/* Estilo del logo */
+.logo .menu-item{
+    font-family: 'outfit';
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    margin-left: 10px;
+    height: 50px;
+    z-index: 9;
+    padding-left: 150px ;
+    justify-content: center;
+    margin: 10px 0px ;
+}
+
+.logo2 .menu-item {
+    font-family: 'outfit';
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 10px 0;
+    z-index: 3;
+    text-decoration: none;
+    width: 245px;
+    bottom: 8px;
+}
+.logo2 .menu-item p {
+    font-size: 20px;
+    margin: 10px 0 -5px ;
+    text-decoration: underline;
+}
+.logo{
+    display: none;
+}
+.logo2 img {
+    width: 100% ;
+    height: 100%;
+    object-fit: cover;
+}
+.logo img {
+    width: 60px;
+    height: 50px;
+}
+/* Botón de menú hamburguesa */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+/* Contenedor de los enlaces */
+nav{
+    width: 100%;
+    object-fit: contain;
+}
+.links-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    margin: 0;
+    padding: 0 10%;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+nav .menu-item {
+    position: relative;
+    width: 100% ;
+}
+.menu-item a {    
+    font-family: 'Outfit', sans-serif;
+    color: #fff ;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+/* Estilo cuando se hace clic en el enlace principal */
+.menu-item a.active {
+    background-color: #FFD53D; /* Color de fondo cuando está activo */
+    color: #000;
+}
+.logo2 span {
+    font-size: 45px ;
+    color: #000;display: none;
+}
+
+/* Estilo del submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 192, 0.7);
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.submenu a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+/* Mostrar el submenu al pasar el ratón */
+.menu-item:hover .submenu {
+    width: 100%;
+    display: block;
+}
+
+/* Cuando el ratón está sobre el enlace en el submenu */
+.submenu a:hover::after {
+    width: 100%;
+}
+
+/* Mostrar el submenu si el enlace principal tiene la clase active */
+.menu-item a.active + .submenu {
+    display: block;
+    width: 100%;
+}
+
+/* Estilo normal del enlace en el submenu */
+.submenu a {
+    position: relative; 
+    color: #fff; 
+    text-decoration: none; 
+    display: inline-block; 
+    padding-bottom: 10px; 
+    width: 100%;
+    display: grid;
+    place-self: center;
+}
+
+/* Estilo cuando el ratón está sobre el enlace */
+.submenu a:hover {
+    color: #FFD53D; 
+    
+}
+
+/* Pseudo-elemento ::after para el borde animado */
+.submenu a::after {
+    content: ''; /* No hay contenido, solo el borde */
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    width: 0; 
+    height: 3px;
+    background-color: #FFD53D; 
+    transition: width 0.3s ease-in-out; 
+}
+
+/* Cuando el ratón está sobre el enlace, el borde se expande */
+.submenu a:hover::after {
+    width: 100%;
+}
+
+/* Estilo de los enlaces principales */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    display: block;
+}
+/* Evitar cambios en los elementos con no-bg-change */
+
+nav a:hover {
+    color: #000;
+}
+@media (max-width: 1000px ) { 
+    .links-container{
+        padding: 0 ;
+    }
+    .submenu a {        
+        padding: 10px 0px;        
+    }
+}
+@media (max-width: 910px) {
+
+    .logo-menu-container {
+        justify-content: space-between;
+    }
+
+    .links-container {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #37639c;
+        transform: translateY(-100%);
+        display: none;
+        margin: 0 ;
+        padding: 0 ;
+    }
+
+    .links-container.active {
+        transform: translateY(0);
+        display: flex;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .menu-item {
+        position: static;
+    }
+
+    .menu-item a{      
+        color: #fff;
+    }
+
+    .submenu {
+        position: static;
+        display: none;
+    }
+
+    .menu-item.active .submenu {
+        display: block;
+    }
+    .logo{  
+        display: inline;
+    }
+    .logo .menu-item{
+        padding-left: 70px ;
+    }
+    .logo2{
+        display: none;
+    }
+}
+/* footer y header de direcciones */  
+.head-location {
+    font-family:'outfit';
+    background-color: #37639c;
+    color: white;
+    padding: 5px 30px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-left a,
+.links-right a {
+    text-decoration: none;
+    color: #d4d4d4;
+    font-size: 14px;
+    margin-right: 15px;
+    margin-bottom: 50px;
+}
+
+.links-left a:last-child,
+.links-right a:last-child {
+    margin-right: 0;
+    /* Elimina el margen del último enlace */
+}
+
+.links-left a:hover,
+.links-right a:hover {
+    text-decoration: underline;
+    font-size: 16px;
+    color: #ffffff;
+}
+/*  */
+@media (max-width: 768px) {
+    .head-location{
+        display: none;
+    }
+}
+
+/* footer */
+.container-copyright {
+    font-family: 'outfit';
+    background-color: #0000A3;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: auto;
+}
