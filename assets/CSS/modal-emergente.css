@@ -1,142 +1,322 @@
-body {
-    font-family: 'outfit';
-    margin: 0;
-    padding: 0;
-    color: #333;
-    min-height: 100vh;  /* Asegura que el body ocupe todo el alto de la pantalla */
-    display: flex;
-    flex-direction: column;
+/* Variables de diseño */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --dark-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --text-color: #2b2d42;
+    --text-light: #8d99ae;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
 }
-.card button {
-    background-color: #007bff;
+
+/* Estilos generales */
+.psychology-tips-section {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 2.3rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.title-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 0 auto 1.5rem;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Contenedor de tarjetas */
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Tarjetas de psicología */
+.psychology-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.psychology-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.psychology-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
+}
+
+.card-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card-excerpt {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.card-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: #f1f3f8;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--dark-color);
+}
+
+.card-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
-    font-size: 16px;
-    width: 100%;
+    transition: var(--transition);
 }
-.card button:hover {
-    background-color: #0056b3;
+
+.card-button:hover {
+    background: var(--secondary-color);
 }
-.modal {
-    display: none;
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+/* Modal para PDF */
+.pdf-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
-.modal-content {
-    background: #fff;
-    width: 80%;
-    height: 80%;
-    border-radius: 8px;
+
+.pdf-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-container {
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    height: 80vh;
+    border-radius: 12px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--secondary-color);
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.modal-body {
+    flex: 1;
     position: relative;
 }
-.modal-content iframe {
+
+#pdfViewer {
     width: 100%;
     height: 100%;
     border: none;
 }
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #1713ff;
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-color);
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
     cursor: pointer;
-    border-radius: 50%;
-}
-.close:hover {
-    background: #3350f7;
-}
-/*  */
-/*  */
-/*  */
-
-/* Images and Tips */
-.container-imagenes-y-tips {
-    gap: 20px;
-    padding: 20px 20px;       
-    background: linear-gradient(to right, white, rgb(182, 182, 192), white);
-    margin-bottom: 20px ;
+    transition: var(--transition);
 }
 
-.content-info-ima-tips {
-    text-align: center;
-    font-size: 1.3rem;
-    margin: 20px 0 ;
+.download-button:hover {
+    background: #3a7bd5;
 }
 
-.container-imagenes-y-tips h2 {
-    text-align: center;
-    color: #000;
-    font-size:1.9rem;
-    font-weight: bold;
-}
-.custom-img {
-    width: 100%; /* Ajusta la imagen al ancho completo del contenedor */
-    height: 500px; /* Define una altura específica */
-    object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor sin distorsionarse */
+.download-icon {
+    width: 18px;
+    height: 18px;
+    fill: white;
 }
 
-/* Media Query para pantallas pequeñas */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .container-imagenes-y-tips{        
-        flex-wrap: wrap;
-    }
-    .container-imagenes-y-tips h2{
-        width: 100%;
-        padding: 0px;
-    }
-    .custom-img {
-        width: 80%; /* Ajusta el tamaño al 80% del contenedor en pantallas más pequeñas */
-        height: 200px; /* Ajusta la altura en pantallas más pequeñas */
-    }
-}
-/* Estilos para el botón */
-.btn-tips {
-    background-color: #007bff; 
-    color: white;              
-    border: none;              
-    padding: 10px 20px;        
-    font-size: 16px;           
-    cursor: pointer;          
-    border-radius: 5px;        
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;    
-    display: inline-block;   
-    text-align: center;    
-}
-
-.btn-tips:hover {
-    background-color: #0056b3; 
-    transform: scale(1.05);   
-}
-
-/* Estilos para el enlace dentro del botón */
-.btn-tips a {
-    color: white;           
-    text-decoration: none;  
-}
-/* modal */
-.modal-body iframe {
-    width: 100%;
-}
-@media (min-width: 768) {
-    .modal-dialog {
-        max-width: 90%;
-        margin: auto;
+    .section-title {
+        font-size: 1.8rem;
     }
     
-    .modal-body iframe {
-        height: 400px; /* Ajusta la altura para pantallas pequeñas */
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-container {
+        width: 95%;
+        height: 85vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .card-image-container {
+        height: 200px;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .card-button {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
     }
 }

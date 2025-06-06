@@ -97,54 +97,90 @@
     </header>
     <script src="../assets/JS/scroll_nav.js"></script>
 
-    <section class="container-imagenes-y-tips">
-        <h2>TIPS DE PSICOLOGIA</h2>
-        <p class="content-info-ima-tips">Conóce un poco más sobre las causas y concecuencias de no tener cuidado con nuestros hijos(as), padres debemos de estar
-            al tanto y ser constantes en el cuidado con nuestros niños.
-        </p>
-        <div class="carrusel-tips">
-            <!--  -->
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col" >
-                    <div class="card">
-                        <img src="../assets/IMGS/Psicologia/embarazo-precoz.png" class="card-img-top custom-img" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">EMBARAZO PRECOZ</h5>
-                            <p class="card-text">El embarazo precoz es un fenómeno social y de salud pública que se refiere
-                                a la gestación que ocurre en adolescentes, generalmente antes de los 18 años.</p>
-                            <button id="ver-embarazo" type="button" class="btn btn-primary" data-toggle="modal" data-target="#pdfModal">
-                                Ver más
-                            </button>
-                        </div>
-                    </div>
+    <section class="psychology-tips-section">
+        <div class="section-header">
+            <h2 class="section-title">Consejos de Psicología Infantil</h2>
+            <div class="title-divider"></div>
+            <p class="section-subtitle">
+                Información valiosa para padres sobre el desarrollo emocional y social de sus hijos
+            </p>
+        </div>
+    
+        <div class="tips-container">
+            <!-- Tarjeta 1 - Embarazo Precoz -->
+            <div class="psychology-card">
+                <div class="card-image-container">
+                    <img src="../assets/IMGS/Psicologia/embarazo-precoz.png" alt="Embarazo Precoz" class="card-image">
+                    <div class="image-overlay"></div>
+                    <div class="card-tag">Prevención</div>
                 </div>
-                
-                <div class="col" >
-                    <div class="card">
-                        <img src="../assets/IMGS/Psicologia/bullying.jpg" class="card-img-top custom-img" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">ACOSO ESCOLAR</h5>
-                            <p class="card-text">
-                                El embarazo precoz es un fenómeno social y de salud pública que se refiere
-                                a la gestación que ocurre en adolescentes, generalmente antes de los 18 años.
-                            </p>
-                            <button id="ver-acoso" type="button" class="btn btn-primary" data-toggle="modal" data-target="#pdfModal">
-                                Ver más
-                            </button>
-                        </div>
+                <div class="card-content">
+                    <h3 class="card-title">Embarazo Precoz</h3>
+                    <p class="card-excerpt">
+                        El embarazo precoz es un fenómeno social y de salud pública que se refiere a la gestación que ocurre
+                        en adolescentes, generalmente antes de los 18 años.
+                    </p>
+                    <div class="card-stats">
+                        <span class="stat-item">📊 1 de cada 5 adolescentes</span>
+                        <span class="stat-item">⚠️ Riesgo elevado</span>
                     </div>
+                    <button class="card-button" data-pdf="../assets/DOC/Psicologia/EMBARAZO PRECOZ.pdf">
+                        <span>Ver Informe Completo</span>
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                        </svg>
+                    </button>
                 </div>
-                <!--  -->
-                <div class="modal" id="modal">
-                    <div class="modal-content">
-                        <button class="close" id="closeModal">&times;</button>
-                        <!-- Contenedor para el archivo PDF -->
-                        <iframe id="pdfViewer"></iframe>
+            </div>
+    
+            <!-- Tarjeta 2 - Acoso Escolar -->
+            <div class="psychology-card">
+                <div class="card-image-container">
+                    <img src="../assets/IMGS/Psicologia/bullying.jpg" alt="Acoso Escolar" class="card-image">
+                    <div class="image-overlay"></div>
+                    <div class="card-tag">Concienciación</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Acoso Escolar</h3>
+                    <p class="card-excerpt">
+                        Comportamiento agresivo repetitivo que implica un desequilibrio de poder y puede tener consecuencias
+                        graves en el desarrollo emocional del niño.
+                    </p>
+                    <div class="card-stats">
+                        <span class="stat-item">👥 20% de estudiantes</span>
+                        <span class="stat-item">😔 Baja autoestima</span>
                     </div>
+                    <button class="card-button" data-pdf="../assets/DOC/Psicologia/acoso-escolar.pdf">
+                        <span>Ver Informe Completo</span>
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                        </svg>
+                    </button>
                 </div>
-                <script src="../assets/JS/acoso-embarazo-modal.js"></script>       
             </div>
         </div>
+    
+        <!-- Modal para PDF -->
+        <div class="pdf-modal" id="pdfModal">
+            <div class="modal-container">
+                <button class="modal-close">&times;</button>
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalTitle">Documento de Psicología</h3>
+                </div>
+                <div class="modal-body">
+                    <iframe id="pdfViewer" frameborder="0"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button class="download-button">
+                        <svg class="download-icon" viewBox="0 0 24 24">
+                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                        </svg>
+                        Descargar PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="../assets/JS/acoso-embarazo-modal.js"></script>
     </section>
     
 

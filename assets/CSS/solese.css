@@ -1,180 +1,257 @@
-*{
-    font-family: 'outfit';
-}
-/* Filosofia Brechtiana */
-.title h2 {
-    text-align: center;
-    color: #333;
-    margin-top: 20px ;
-    
-}
-.container-filosofia {
-    display: flex;
-    justify-content: center; 
-    align-items: center;  
-    padding: 20px;
-    width: 100%;    
-    margin-top: 20px ;
-    background: linear-gradient(to right, white, rgb(182, 182, 192), white);
+/* Variables de diseño */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --shadow: 0 10px 20px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
 }
 
-/* Estilos para el contenido interno */
-.content {
-    display: flex;
-    flex-wrap: wrap;         
-    gap: 20px;              
-    align-items: center;    
-    justify-content: center; 
-    max-width: 100%;
-    
-}
-
-/* Estilos para los contenedores de medios */
-.media-container {
-    width: 500px;
-    height: 300px; 
-    overflow: hidden; 
-    border-radius: 8px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    position: relative; 
-}
-
-/* Estilos para la imagen */
-.image-wrapper {
-    position: relative; 
-    width: 100%; 
-    height: 100%; 
-}
-
-/* Estilos para los elementos de imagen y video */
-.media-item {
-    width: 100%; 
-    height: 100%;
-    object-fit: fill; 
-}
-
-/* Estilos para el botón dentro de la imagen */
-.btn-overlay a {
-    position: absolute; 
-    bottom: 20px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    background-color:  #007bff; 
-    color: rgb(253, 253, 253); 
-    border: none; 
-    padding: 10px 20px;
-    font-size: 16px; 
-    cursor: pointer; 
-    border-radius: 5px; 
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none; 
-    display: inline-block; 
-    text-align: center; 
-}
-
-.btn-overlay a:hover {
-    background-color: #092fd6; /* Color de fondo al pasar el ratón */
-}
-
-/* Media Query para pantallas pequeñas */
-@media (max-width: 768px) {
-    .container-filosofia {
-        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
-        align-items: center;    /* Centra los elementos horizontalmente */
-    }
-
-    .image-container,
-    .video-container {
-        max-width: 100%; /* Hace que cada contenedor ocupe el ancho completo */
-        text-align: center; /* Centra el contenido dentro de los contenedores */
-    }
-
-    .video-container video {
-        max-width: 100%; /* Hace que el video se ajuste al ancho del contenedor en pantallas pequeñas */
-    }
-}
-/* 2 */
-/* Contenedor principal */
-.container-filosofia {
-    padding: 20px;
+/* Estilos generales */
+.philosophy-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .philosophy-container {
-    display: flex;
-    flex-direction: column; /* Cambia a columna por defecto */
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
 }
 
-.philosophy-content {
-    display: flex;
-    flex-direction: row; /* En pantallas grandes, coloca lado a lado */
-    gap: 20px;
-}
-
-/* Sección de texto */
-.philosophy-text {
-    flex: 2; /* Toma más espacio que la imagen */
-}
-
-.philosophy-title {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
+/* Encabezado */
+.philosophy-header {
     text-align: center;
-} 
-.concept, .description{
-    padding-left: 100px ;
-    font-size: 1rem;
-}
-.description{
-    width: 85% ;
-}
-.description p {
-    color: #555;
-    line-height: 1.5;
+    margin-bottom: 3rem;
 }
 
-/* Imagen */
-.philosophy-image {
-    flex: 1; /* La imagen ocupa menos espacio */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.title-decoration {
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Contenido principal */
+.philosophy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Tarjetas de filosofía */
+.philosophy-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.philosophy-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-header {
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
-.philosophy-image img {
-    max-width: 100%; /* La imagen se ajusta al contenedor */
+.card-icon {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    background: var(--light-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.card-text {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Sección visual */
+.philosophy-visual {
+    position: relative;
+    height: 100%;
+}
+
+.visual-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.philosophy-image {
+    width: 100%;
     height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.2));
+    z-index: 1;
 }
 
 /* Beneficios */
-.benefits {
+.benefits-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.benefits-title {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-color);
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.benefit-item:last-child {
+    border-bottom: none;
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.benefit-text {
+    color: var(--text-color);
     font-size: 1rem;
-    margin-top: 40px;
 }
 
-/* Nota */
-.note {
+/* Pie de sección */
+.philosophy-footer {
     text-align: center;
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: #777;
+    margin-top: 3rem;
 }
 
-/* Diseño responsivo */
-@media (max-width: 768px) {
-    .philosophy-content {
-        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
-    }
+.footer-note {
+    display: inline-block;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    font-style: italic;
+    color: var(--primary-color);
+    position: relative;
+}
 
-    .philosophy-image {
-        margin-top: 20px; /* Espaciado adicional cuando pasa debajo */
-    } 
-    .concept, .description{
-        padding-left: 10px ;
+.footer-note::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: white;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .philosophy-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .philosophy-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .visual-container {
+        max-width: 80%;
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .visual-container {
+        max-width: 100%;
+    }
+    
+    .philosophy-card {
+        padding: 1rem;
     }
 }
