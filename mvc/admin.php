@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bertol Brecht - Admin Dashboard</title>
     <!-- Font Awesome 6.5 (2025) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +35,12 @@ session_start();
                 <a href="view/index.php">
                     <i class="fas fa-newspaper"></i>
                     <span>Noticias</span>
+                </a>
+            </li>
+            <li>
+                <a href="view/contactenos/index.php">
+                    <i class="bi bi-chat-quote-fill"></i>
+                    <span>Mensajes</span>
                 </a>
             </li>
             <li>

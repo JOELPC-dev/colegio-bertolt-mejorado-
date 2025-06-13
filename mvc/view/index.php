@@ -37,6 +37,30 @@ include "../controller/NoticiaController.php";
             padding: 2rem;
         }
 
+        /* Estilo para el botón de regreso */
+        .btn-back {
+            position: absolute;
+            left: 2rem;
+            top: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+            z-index: 10;
+        }
+
+        .btn-back:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
         .table-container {
             max-width: 100%;
             overflow-x: auto;
@@ -44,6 +68,8 @@ include "../controller/NoticiaController.php";
             padding: 2rem;
             border-radius: 0.75rem;
             box-shadow: var(--card-shadow);
+            position: relative;
+            margin-top: 20px;
         }
 
         .table-header {
@@ -198,6 +224,11 @@ include "../controller/NoticiaController.php";
                 padding: 1rem;
             }
 
+            .btn-back {
+                left: 1rem;
+                top: 1rem;
+            }
+
             .table-container {
                 padding: 1rem;
             }
@@ -221,6 +252,11 @@ include "../controller/NoticiaController.php";
 </head>
 
 <body>
+    <!-- Botón de regreso a admin.php -->
+    <a href="../admin.php" class="btn-back" title="Volver al panel de administración">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
     <div class="table-container">
         <div class="table-header">
             <h2><i class="fas fa-newspaper"></i> Lista de Noticias</h2>
@@ -279,7 +315,7 @@ include "../controller/NoticiaController.php";
                     <?php } ?>
                 <?php } else { ?>
                     <tr>
-                        <td colspan="7" class="text-center">No hay noticias registradas en el sistema.</td>
+                        <td colspan="8" class="text-center">No hay noticias registradas en el sistema.</td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -338,5 +374,4 @@ include "../controller/NoticiaController.php";
         });
     </script>
 </body>
-
 </html>
